@@ -23,8 +23,8 @@ class minecraft (
             install_dir => $install_dir,
     }
     service {'minecraft':
-        ensure => running,
-        enable => true,
+        ensure  => running,
+        enable  => true,
         require => [Package['java'],File["${installl_dir}/eula.txt"],File['/etc/systemd/system/minecraft.service']],
     }
 }
